@@ -23,7 +23,16 @@ var LetterSchema = new Schema({
 	user: {
 		type: Schema.ObjectId,
 		ref: 'User'
-	}
+	},
+    recipient: {
+        type: Schema.ObjectId,
+        ref: 'User'
+    },
+    body: {
+        type: String,
+        default: '',
+        required: 'Please fill body.'
+    }
 });
 
 mongoose.model('Letter', LetterSchema);
