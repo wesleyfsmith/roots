@@ -23,7 +23,16 @@ var QuestionSchema = new Schema({
 	user: {
 		type: Schema.ObjectId,
 		ref: 'User'
-	}
+	},
+    recipient: {
+        type: Schema.ObjectId,
+        ref: 'User'
+    },
+    body: {
+        type: String,
+        default: '',
+        required: 'Please fill body.'
+    }
 });
 
 mongoose.model('Question', QuestionSchema);
